@@ -1,17 +1,29 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title>Body mass index (BMI)</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+  
+  <ion-list>
+
+    <ion-list-header>
+      <h1>A measure of body fat</h1>
+    </ion-list-header>
+  
+    <ion-item margin>
+      <ion-label color="primary">Weight</ion-label>
+      <ion-input [(ngModel)]="weight" type="number" (keyup)="onkey($event)" placeholder="lb"></ion-input>
+    </ion-item>
+  
+    <ion-item margin>
+      <ion-label color="primary">Height</ion-label>
+      <ion-input [(ngModel)]="heightFt" type="number"  (keyup)="onkey($event)" placeholder="ft" margin-right></ion-input>
+      <ion-input [(ngModel)]="heightIn" type="number"  (keyup)="onkey($event)" placeholder="in"></ion-input>
+    </ion-item>
+    <ion-label>
+       {{bmiResult}}
+    </ion-label>
+  </ion-list>
 </ion-content>
