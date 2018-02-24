@@ -14,11 +14,11 @@ export class HomePage {
   weight: number;
   height: number;
   heightIn: number;
-  bmiResult: number;
+  bmiResult: number ;
   unitOfMeasure = 'imperial';
   weightLabel = 'lb';
   heightFtOrMeterLabel = 'ft';
-  heightInOrCmLabel ='in';
+  heightInOrCmLabel = 'in';
   isImperial: boolean;
 
   constructor(public calculatorProvider: CalculatorProvider, public settingProvider: SettingProvider) {
