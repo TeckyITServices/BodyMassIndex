@@ -1,0 +1,4 @@
+enum Unit{
+  imperial,
+  metric
+}

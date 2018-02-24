@@ -1,3 +1,22 @@
 page-home {
+    ion-card.card{
+        background-color: #a0cae5;
+        height: 100px;
+    }
 
+    ion-item.item{
+        
+    }
+
+    .list{
+        margin:30px auto;
+        max-width: 500px;
+    }
+    .result{
+        font-size:40px;
+        font-family: sans-serif;
+        font-weight: bolder;
+        display: block;
+    }
 }
+
