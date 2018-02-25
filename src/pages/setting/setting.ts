@@ -19,17 +19,17 @@ export class SettingPage {
   private isImperial: boolean = true;
 
   constructor(private settingProvider: SettingProvider) {
-    this.isImperial = this.settingProvider.isImperial();
-    this.setUnit(this.isImperial);
+
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad SettingPage');
+    this.isImperial = this.settingProvider.isImperial();
+    this.setUnit(this.isImperial ? 'imperial' : 'metric');
   }
 
   setUnit(isImperial: string | boolean) {
 
-    if (isImperial === 'imperial' || isImperial == true) {
+    if (isImperial === 'imperial') {
       this.imperial = true;
       this.metric = false;
     } else {

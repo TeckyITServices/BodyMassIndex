@@ -15,7 +15,7 @@ export class HomePage {
   height: number;
   heightIn: number;
   bmiResult: number = 0.00;
-  bmiDescription: string= '';
+  bmiDescription: string = '';
   unitOfMeasure = 'imperial';
   weightLabel = 'lb';
   heightFtOrMeterLabel = 'ft';

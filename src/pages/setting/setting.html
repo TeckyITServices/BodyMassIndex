@@ -17,12 +17,12 @@
   <ion-list>
     <ion-item>
       <ion-label>Imperial</ion-label>
-      <ion-toggle [(ngModel)]="imperial" (click)="setUnit('imperial')" name="unit"></ion-toggle>
+      <ion-toggle [ngModel]="imperial" (ngModelChange)="setUnit('imperial')" name="unit"></ion-toggle>
     </ion-item>
     
     <ion-item>
       <ion-label>Metric</ion-label>
-      <ion-toggle [(ngModel)]="metric" (click)="setUnit('metric')" name="unit"></ion-toggle>
+      <ion-toggle [ngModel]="metric" (ngModelChange)="setUnit('metric')" name="unit"></ion-toggle>
     </ion-item>
   </ion-list>
 </ion-content>

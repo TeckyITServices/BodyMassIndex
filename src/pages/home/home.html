@@ -13,14 +13,14 @@
     </ion-list-header>
 
     <ion-item> 
-      <ion-label color="primary">Weight</ion-label>
-      <ion-input [(ngModel)]="weight" type="number" (keyup)="onkey($event)" placeholder={{weightLabel}}></ion-input>
+      <ion-label color="primary" >Weight</ion-label>
+      <ion-input [(ngModel)]="weight" type="number" (keyup)="onkey($event)" placeholder={{weightLabel}} clearInput></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label color="primary">Height</ion-label>
+      <ion-label color="primary" >Height</ion-label>
       <ion-input [(ngModel)]="height" type="number" (keyup)="onkey($event)" placeholder={{heightFtOrMeterLabel}} margin-right></ion-input>
-      <ion-input [(ngModel)]="heightIn" type="number" (keyup)="onkey($event)" placeholder="{{heightInOrCmLabel}}"></ion-input>
+      <ion-input [(ngModel)]="heightIn" type="number" (keyup)="onkey($event)" placeholder="{{heightInOrCmLabel}}" clearInput></ion-input>
     </ion-item>
    
       <ion-card> 
