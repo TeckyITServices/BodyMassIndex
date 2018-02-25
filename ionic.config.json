@@ -1,6 +1,6 @@
 {
   "name": "bodyMassIndex",
-  "app_id": "",
+  "app_id": "01601425",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
