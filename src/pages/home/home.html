@@ -4,32 +4,33 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
 
   <ion-list>
 
-    <ion-list-header>
-      <h1>A measure of body fat</h1>
+    <ion-list-header no-lines no-padding text-center>
+      <h3>A measure of body fat</h3>
     </ion-list-header>
 
-    <ion-item>
+    <ion-item padding> 
       <ion-label color="primary">Weight</ion-label>
       <ion-input [(ngModel)]="weight" type="number" (keyup)="onkey($event)" placeholder={{weightLabel}}></ion-input>
     </ion-item>
 
-    <ion-item>
+    <ion-item padding>
       <ion-label color="primary">Height</ion-label>
       <ion-input [(ngModel)]="height" type="number" (keyup)="onkey($event)" placeholder={{heightFtOrMeterLabel}} margin-right></ion-input>
       <ion-input [(ngModel)]="heightIn" type="number" (keyup)="onkey($event)" placeholder="{{heightInOrCmLabel}}"></ion-input>
     </ion-item>
-    <ion-item no-line> 
-      <ion-card>
+   
+      <ion-card> 
         <ion-card-content text-center *ngIf="bmiResult">
           <span class="result">{{bmiResult}}</span>
-          <span class="type">description</span>
+          <span class="type">
+            <ion-icon name="body" item-start></ion-icon>{{bmiDescription}}</span>
         </ion-card-content>
       </ion-card>
-    </ion-item>
+   
 
   </ion-list>
 </ion-content>

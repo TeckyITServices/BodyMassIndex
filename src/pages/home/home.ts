@@ -14,7 +14,8 @@ export class HomePage {
   weight: number;
   height: number;
   heightIn: number;
-  bmiResult: number ;
+  bmiResult: number;
+  bmiDescription: string;
   unitOfMeasure = 'imperial';
   weightLabel = 'lb';
   heightFtOrMeterLabel = 'ft';
@@ -26,7 +27,6 @@ export class HomePage {
   }
 
   ionViewDidLoad() {
-    debugger;
     this.setLabels();
   }
   ionViewDidEnter() {
@@ -36,6 +36,7 @@ export class HomePage {
 
   onkey(event: any) {
     this.bmiResult = this.calculatorProvider.getBMI(this.weight, this.height, this.heightIn);
+    this.setDescription();
   }
 
   setLabels() {
@@ -43,6 +44,22 @@ export class HomePage {
     this.weightLabel = this.isImperial ? 'lb' : 'kg';
     this.heightFtOrMeterLabel = this.isImperial ? 'ft' : 'm';
     this.heightInOrCmLabel = this.isImperial ? 'in' : 'cm';
+  }
+
+  // Underweight = <18.5
+  // Normal weight = 18.5–24.9 
+  // Overweight = 25–29.9 
+  // Obesity = BMI of 30 or greater
+  setDescription() {
+    if (this.bmiResult < 18.5) {
+      this.bmiDescription = 'Underweight';
+    } else if (this.bmiResult >= 18.5 && this.bmiResult <= 24.9) {
+      this.bmiDescription = 'Normal weight!';
+    } else if (this.bmiResult >= 25 && this.bmiResult <= 29.9) {
+      this.bmiDescription = 'Overweight!';
+    } else if (this.bmiResult >= 30) {
+      this.bmiDescription = 'Obese!';
+    }
   }
 
 }
