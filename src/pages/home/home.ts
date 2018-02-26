@@ -46,6 +46,11 @@ export class HomePage {
     this.heightInOrCmLabel = this.isImperial ? 'in' : 'cm';
   }
 
+  reset(){
+    this.bmiResult = 0.00;
+    this.bmiDescription = '';
+  }
+
   // Underweight = <18.5
   // Normal weight = 18.5–24.9 
   // Overweight = 25–29.9 
@@ -60,6 +65,10 @@ export class HomePage {
     } else if (this.bmiResult >= 30) {
       this.bmiDescription = 'Obese!';
     }
+  }
+
+  isNumber() {
+    return !isNaN(parseFloat("" + this.bmiResult)) && isFinite(this.bmiResult);
   }
 
 }

@@ -13,18 +13,20 @@
     </ion-list-header>
 
     <ion-item> 
-      <ion-label color="primary" >Weight</ion-label>
+      <ion-label color="primary" >Weight ({{weightLabel}}) </ion-label>
       <ion-input [(ngModel)]="weight" type="number" (keyup)="onkey($event)" placeholder={{weightLabel}} clearInput></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label color="primary" >Height</ion-label>
-      <ion-input [(ngModel)]="height" type="number" (keyup)="onkey($event)" placeholder={{heightFtOrMeterLabel}} margin-right></ion-input>
-      <ion-input [(ngModel)]="heightIn" type="number" (keyup)="onkey($event)" placeholder="{{heightInOrCmLabel}}" clearInput></ion-input>
+      <ion-label color="primary" >Height ({{heightFtOrMeterLabel}})</ion-label>
+      <ion-input [(ngModel)]="height" type="number" (keyup)="onkey($event)" placeholder={{heightFtOrMeterLabel}}  clearInput></ion-input>
     </ion-item>
-   
+    <ion-item>
+        <ion-label color="primary" >Height ({{heightInOrCmLabel}})</ion-label>
+        <ion-input [(ngModel)]="heightIn" type="number" (keyup)="onkey($event)" placeholder="{{heightInOrCmLabel}}" clearInput></ion-input>
+      </ion-item>
       <ion-card> 
-        <ion-card-content text-center *ngIf="bmiResult">
+        <ion-card-content text-center *ngIf="isNumber()">
           <span class="result">{{bmiResult}}</span>
           <span class="type">
             <ion-icon name="body" item-start></ion-icon>{{bmiDescription}}</span>
